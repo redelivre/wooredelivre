@@ -188,7 +188,7 @@ if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', 
 	 */
 	add_action ( 'woocommerce_after_order_notes', 'personal_message_checkout_field' );
 	function personal_message_checkout_field($checkout) {
-		echo '<div class="delivery-notice-container">*Encomendas feitas na terça ou quarta não entram na entrega desta semana, na sexta, sua encomenda sera entregue na proxima sexta.</div>';
+		echo '<div class="delivery-notice-container">*Encomendas feitas fora do prazo de pedidos serão entregues na outra semana.</div>';
 		echo '<div class="entry-wrapper">';
 		
 		woocommerce_form_field ( 'birth_day', array (
@@ -196,10 +196,10 @@ if (in_array ( 'woocommerce/woocommerce.php', apply_filters ( 'active_plugins', 
 				'class' => array (
 						'form-row-wide' 
 				),
-				'label' => __ ( 'Insert your Birth Day' ),
+				'label' => __ ( 'Data de nascimento' ),
 				'clear' => false,
 				'required' => true,
-				'placeholder' => __ ( 'Birth Day' ) 
+				'placeholder' => __ ( 'Data de nascimento' ) 
 		), $checkout->get_value ( 'birth_day' ) );
 		echo '</div>';
 	}
